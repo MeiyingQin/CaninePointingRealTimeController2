@@ -36,17 +36,16 @@ public class RobotCommand {
         }
     }
 
-    public boolean sendInfoViaSocket(Context context, String message) {
+    public String sendInfoViaSocket(String message) {
         Log.d("[sendInfoSocketSTART]", Calendar.getInstance().getTime().toString());
 
         final String requestMessage = message + "\n";
-        final Context currentContext = context;
 
         ExecutorService executorService = Executors.newFixedThreadPool(1);
-        Callable<Boolean> callableCommand = new Callable<Boolean>() {
+        Callable<String> callableCommand = new Callable<String>() {
             @Override
-            public Boolean call() {
-                boolean returnValue = false;
+            public String call() {
+                String returnValue = "";
                 try{
                     PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
                     BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -57,15 +56,15 @@ public class RobotCommand {
                     String serverMessage = in.readLine();
                     Log.d("RESPONSE FROM SERVER", "S: Received Message: '" + serverMessage + "'");
 
-                    returnValue = serverMessage.equals(currentContext.getString(R.string.connection_respond));
+                    returnValue = serverMessage;
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
                 return returnValue;
             }
         };
-        Future<Boolean> result = executorService.submit(callableCommand);
-        boolean returnValue = false;
+        Future<String> result = executorService.submit(callableCommand);
+        String returnValue = "";
         try {
             returnValue = result.get();
         } catch (InterruptedException | ExecutionException e) {

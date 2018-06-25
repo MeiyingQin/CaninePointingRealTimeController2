@@ -6,4 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".HeadController">
 
+    <SeekBar
+        android:id="@+id/headControlSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10mm"
+        android:paddingBottom="10mm"
+        android:max="200"
+        android:min="0"
+        android:progress="100"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/headControlCheckBox" />
+
+    <CheckBox
+        android:id="@id/headControlCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:checked="false"
+        android:text="@string/headcontroller_enabled"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headControlSeekBar"/>
+
 </android.support.constraint.ConstraintLayout>

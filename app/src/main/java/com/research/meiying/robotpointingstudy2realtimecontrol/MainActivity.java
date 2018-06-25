@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 RobotCommand robotCommand = new RobotCommand(ip, port);
-                if (robotCommand.sendInfoViaSocket(getBaseContext(), getString(R.string.initial_connection_request))) {
+                boolean is_connected = robotCommand.sendInfoViaSocket(getString(R.string.initial_connection_request)).equals(getString(R.string.connection_respond));
+                if (is_connected) {
                     Intent intent = new Intent(getApplicationContext(), HeadController.class);
                     startActivity(intent);
                 }
