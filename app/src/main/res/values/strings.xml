@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">RobotPointingStudy2RealTimeControl</string>
+
+    <string name="initial_connection_request">connect request</string>
+    <string name="connection_respond">success</string>
+
+    <string name="server_ip">172.28.228.129</string>
+    <string name="server_port">10001</string>
+
+    <string name="server_ip_label_name">IP: </string>
+    <string name="server_port_label_name">Port: </string>
+    <string name="main_activity_start_button_name">START</string>
 </resources>
