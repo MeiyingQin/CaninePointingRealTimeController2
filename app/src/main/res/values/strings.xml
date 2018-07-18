@@ -4,7 +4,7 @@
     <string name="initial_connection_request">connect request</string>
     <string name="connection_respond">success</string>
 
-    <string name="server_ip">192.168.1.105</string>
+    <string name="server_ip">192.168.1.101</string>
     <string name="server_port">10001</string>
 
     <string name="server_ip_label_name">IP: </string>
