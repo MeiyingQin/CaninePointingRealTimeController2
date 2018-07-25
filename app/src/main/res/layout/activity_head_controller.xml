@@ -59,7 +59,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <Button
+        android:id="@+id/walkLeftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="15mm"
+        android:text="@string/walk_left"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/walkForwardButton"
+        app:layout_constraintRight_toLeftOf="@id/walkForwardButton" />
 
+    <Button
+        android:id="@+id/walkRightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="15mm"
+        android:text="@string/walk_right"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/walkForwardButton"
+        app:layout_constraintLeft_toRightOf="@id/walkForwardButton" />
 
-
+    <Button
+        android:id="@+id/walkBackwardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="15mm"
+        android:text="@string/walk_backward"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/walkLeftButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    
 </android.support.constraint.ConstraintLayout>
