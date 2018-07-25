@@ -67,4 +67,28 @@ public class HeadController extends AppCompatActivity {
 
         seekBar.setEnabled(isEnabled);
     }
+
+    public void onWalkCheckboxClicked(View view) {
+
+    }
+
+    public void onWalkForwardButtonPressed(View view) {
+
+    }
+
+    public void onWalkBackwardButtonPressed(View view) {
+
+    }
+
+    public void onWalkTurnLeftButtonPressed(View view) {
+
+    }
+
+    public void onWalkTurnRightButtonPressed(View view) {
+
+    }
+
+    public void onWalkButtonsReleased(View view) {
+
+    }
 }

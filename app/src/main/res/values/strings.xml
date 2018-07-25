@@ -15,5 +15,10 @@
     <string name="set_head_angle">set head angle</string>
     <string name="deliminator">|</string>
 
-    <string name="headcontroller_enabled">Enabled</string>
+    <string name="headcontroller_enabled">Head Controller Enabled</string>
+    <string name="walkcontroller_enabled">Walk Controller Enabled</string>
+    <string name="walk_forward">Forward</string>
+    <string name="walk_backward">Backward</string>
+    <string name="walk_left">Turn Left</string>
+    <string name="walk_right">Turn Right</string>
 </resources>
