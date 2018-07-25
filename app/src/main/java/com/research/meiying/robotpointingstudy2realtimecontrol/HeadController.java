@@ -45,26 +45,12 @@ public class HeadController extends AppCompatActivity {
 
         setUpWalkButtons(R.id.walkForwardButton, R.string.robot_command_walk_forward);
         setUpWalkButtons(R.id.walkBackwardButton, R.string.robot_command_walk_backward);
+        setUpWalkButtons(R.id.turnLeftButton, R.string.robot_command_turn_left);
+        setUpWalkButtons(R.id.turnRightButton, R.string.robot_command_turn_right);
         setUpWalkButtons(R.id.walkLeftButton, R.string.robot_command_walk_left);
         setUpWalkButtons(R.id.walkRightButton, R.string.robot_command_walk_right);
 
         enableWalkButtons(false);
-
-//        Button walkForwardButton = findViewById(R.id.walkForwardButton);
-//        walkForwardButton.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                switch(event.getAction()) {
-//                    case MotionEvent.ACTION_DOWN:
-//                        new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_walk_forward));
-//                        return true; // if you want to handle the touch event
-//                    case MotionEvent.ACTION_UP:
-//                        new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_walk_stop));
-//                        return true; // if you want to handle the touch event
-//                }
-//                return false;
-//            }
-//        });
     }
 
     private void setUpWalkButtons(int viewId, final int walkType) {
@@ -88,6 +74,8 @@ public class HeadController extends AppCompatActivity {
     private void enableWalkButtons(boolean isEnabled) {
         findViewById(R.id.walkForwardButton).setEnabled(isEnabled);
         findViewById(R.id.walkBackwardButton).setEnabled(isEnabled);
+        findViewById(R.id.turnLeftButton).setEnabled(isEnabled);
+        findViewById(R.id.turnRightButton).setEnabled(isEnabled);
         findViewById(R.id.walkLeftButton).setEnabled(isEnabled);
         findViewById(R.id.walkRightButton).setEnabled(isEnabled);
     }

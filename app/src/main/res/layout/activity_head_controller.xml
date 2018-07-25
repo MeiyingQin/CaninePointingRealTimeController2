@@ -60,19 +60,19 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/walkLeftButton"
+        android:id="@+id/turnLeftButton"
         android:layout_width="wrap_content"
         android:layout_height="15mm"
-        android:text="@string/walk_left"
+        android:text="@string/turn_left"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/walkForwardButton"
         app:layout_constraintRight_toLeftOf="@id/walkForwardButton" />
 
     <Button
-        android:id="@+id/walkRightButton"
+        android:id="@+id/turnRightButton"
         android:layout_width="wrap_content"
         android:layout_height="15mm"
-        android:text="@string/walk_right"
+        android:text="@string/turn_right"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/walkForwardButton"
         app:layout_constraintLeft_toRightOf="@id/walkForwardButton" />
@@ -83,8 +83,36 @@
         android:layout_height="15mm"
         android:text="@string/walk_backward"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/walkLeftButton"
+        app:layout_constraintTop_toBottomOf="@id/turnLeftButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/WalkControllerMidlineBreak"
+        android:layout_width="match_parent"
+        android:layout_height="0.8mm"
+        android:background="#a0a0a0"
+        app:layout_constraintTop_toBottomOf="@id/walkBackwardButton"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/walkLeftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="15mm"
+        android:text="@string/walk_left"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/WalkControllerMidlineBreak"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/walkRightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="15mm"
+        android:text="@string/walk_right"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/WalkControllerMidlineBreak"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 </android.support.constraint.ConstraintLayout>
