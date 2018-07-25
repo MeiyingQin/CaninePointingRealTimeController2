@@ -15,5 +15,22 @@
     <string name="set_head_angle">set head angle</string>
     <string name="deliminator">|</string>
 
-    <string name="headcontroller_enabled">Enabled</string>
+    <string name="headcontroller_enabled">Head Controller Enabled</string>
+    <string name="walkcontroller_enabled">Walk Controller Enabled</string>
+    <string name="walk_forward">Forward</string>
+    <string name="walk_backward">Backward</string>
+    <string name="turn_left">Turn Left</string>
+    <string name="turn_right">Turn Right</string>
+    <string name="walk_left">Walk Left</string>
+    <string name="walk_right">Walk Right</string>
+
+    <string name="robot_command_walk_init">walk init</string>
+    <string name="robot_command_walk_forward">walk forward</string>
+    <string name="robot_command_walk_backward">walk backward</string>
+    <string name="robot_command_turn_left">turn left</string>
+    <string name="robot_command_turn_right">turn right</string>
+    <string name="robot_command_walk_left">walk left</string>
+    <string name="robot_command_walk_right">walk right</string>
+    <string name="robot_command_walk_stop">walk stop</string>
+    <string name="robot_command_stand">stand</string>
 </resources>
