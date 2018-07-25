@@ -2,7 +2,9 @@ package com.research.meiying.robotpointingstudy2realtimecontrol;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.SeekBar;
 
@@ -40,6 +42,54 @@ public class HeadController extends AppCompatActivity {
         });
 
         syncSeekBar();
+
+        setUpWalkButtons(R.id.walkForwardButton, R.string.robot_command_walk_forward);
+        setUpWalkButtons(R.id.walkBackwardButton, R.string.robot_command_walk_backward);
+        setUpWalkButtons(R.id.walkLeftButton, R.string.robot_command_walk_left);
+        setUpWalkButtons(R.id.walkRightButton, R.string.robot_command_walk_right);
+
+        enableWalkButtons(false);
+
+//        Button walkForwardButton = findViewById(R.id.walkForwardButton);
+//        walkForwardButton.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                switch(event.getAction()) {
+//                    case MotionEvent.ACTION_DOWN:
+//                        new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_walk_forward));
+//                        return true; // if you want to handle the touch event
+//                    case MotionEvent.ACTION_UP:
+//                        new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_walk_stop));
+//                        return true; // if you want to handle the touch event
+//                }
+//                return false;
+//            }
+//        });
+    }
+
+    private void setUpWalkButtons(int viewId, final int walkType) {
+        Button walkButton = findViewById(viewId);
+        walkButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch(event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        new RobotCommand().sendInfoViaSocket(getString(walkType));
+                        return true; // if you want to handle the touch event
+                    case MotionEvent.ACTION_UP:
+                        new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_walk_stop));
+                        return true; // if you want to handle the touch event
+                }
+                return false;
+            }
+        });
+    }
+
+    private void enableWalkButtons(boolean isEnabled) {
+        findViewById(R.id.walkForwardButton).setEnabled(isEnabled);
+        findViewById(R.id.walkBackwardButton).setEnabled(isEnabled);
+        findViewById(R.id.walkLeftButton).setEnabled(isEnabled);
+        findViewById(R.id.walkRightButton).setEnabled(isEnabled);
     }
 
     private int barValueToIntended(int bar) {
@@ -69,26 +119,14 @@ public class HeadController extends AppCompatActivity {
     }
 
     public void onWalkCheckboxClicked(View view) {
+        isEnabled = ((CheckBox) view).isChecked();
+        enableWalkButtons(isEnabled);
 
-    }
-
-    public void onWalkForwardButtonPressed(View view) {
-
-    }
-
-    public void onWalkBackwardButtonPressed(View view) {
-
-    }
-
-    public void onWalkTurnLeftButtonPressed(View view) {
-
-    }
-
-    public void onWalkTurnRightButtonPressed(View view) {
-
-    }
-
-    public void onWalkButtonsReleased(View view) {
+        if (isEnabled) {
+            new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_walk_init));
+        } else {
+            new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_stand));
+        }
 
     }
 }
