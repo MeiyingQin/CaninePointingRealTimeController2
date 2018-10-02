@@ -15,6 +15,8 @@
     <string name="set_head_angle">set head angle</string>
     <string name="deliminator">|</string>
 
+    <string name="dispenser_rotate">Rotate Dispenser</string>
+    <string name="refresh_dispenser">Refresh Dispenser</string>
     <string name="headcontroller_enabled">Head Controller Enabled</string>
     <string name="walkcontroller_enabled">Walk Controller Enabled</string>
     <string name="walk_forward">Forward</string>
@@ -33,4 +35,6 @@
     <string name="robot_command_walk_right">walk right</string>
     <string name="robot_command_walk_stop">walk stop</string>
     <string name="robot_command_stand">stand</string>
+    <string name="robot_command_rotate_dispenser">rotate dispenser</string>
+    <string name="robot_command_refresh_dispenser">refresh dispenser</string>
 </resources>

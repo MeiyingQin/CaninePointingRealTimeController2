@@ -115,6 +115,13 @@ public class HeadController extends AppCompatActivity {
         } else {
             new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_stand));
         }
+    }
 
+    public void onDispenserRotateButtonClicked(View view){
+        new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_rotate_dispenser));
+    }
+
+    public void onRefreshDispenserButtonClicked(View view){
+        new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_refresh_dispenser));
     }
 }

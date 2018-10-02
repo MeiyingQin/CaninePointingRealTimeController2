@@ -6,6 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".HeadController">
 
+    <Button
+        android:id="@+id/dispenserRotateButton"
+        android:layout_width="match_parent"
+        android:layout_height="15mm"
+        android:text="@string/dispenser_rotate"
+        android:gravity="center"
+        android:onClick="onDispenserRotateButtonClicked"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/refreshDispenserButton"
+        android:layout_width="match_parent"
+        android:layout_height="15mm"
+        android:text="@string/refresh_dispenser"
+        android:gravity="center"
+        android:onClick="onRefreshDispenserButtonClicked"
+        app:layout_constraintTop_toBottomOf="@id/dispenserRotateButton" />
+
+    <View
+        android:id="@+id/DispenserControllerlineBreak"
+        android:layout_width="match_parent"
+        android:layout_height="0.8mm"
+        android:background="#000000"
+        app:layout_constraintTop_toBottomOf="@id/refreshDispenserButton"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
     <CheckBox
         android:id="@+id/headControlCheckBox"
         android:layout_width="match_parent"
@@ -15,7 +43,7 @@
         android:text="@string/headcontroller_enabled"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/DispenserControllerlineBreak" />
 
     <SeekBar
         android:id="@+id/headControlSeekBar"
@@ -112,7 +140,5 @@
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/WalkControllerMidlineBreak"
         app:layout_constraintEnd_toEndOf="parent" />
-
-
 
 </android.support.constraint.ConstraintLayout>
