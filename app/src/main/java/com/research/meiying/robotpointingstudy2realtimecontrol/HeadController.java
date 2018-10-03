@@ -80,6 +80,15 @@ public class HeadController extends AppCompatActivity {
         findViewById(R.id.walkRightButton).setEnabled(isEnabled);
     }
 
+    private void enableDispenserButtons(final boolean isEnabled) {
+        runOnUiThread(new Runnable() {
+            public void run() {
+                findViewById(R.id.dispenserRotateButton).setEnabled(isEnabled);
+                findViewById(R.id.refreshDispenserButton).setEnabled(isEnabled);
+            }
+        });
+    }
+
     private int barValueToIntended(int bar) {
         return bar - barRange / 2;
     }
@@ -118,10 +127,24 @@ public class HeadController extends AppCompatActivity {
     }
 
     public void onDispenserRotateButtonClicked(View view){
-        new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_rotate_dispenser));
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                enableDispenserButtons(false);
+                new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_rotate_dispenser));
+                enableDispenserButtons(true);
+            }
+        }).start();
     }
 
     public void onRefreshDispenserButtonClicked(View view){
-        new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_refresh_dispenser));
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                enableDispenserButtons(false);
+                new RobotCommand().sendInfoViaSocket(getString(R.string.robot_command_refresh_dispenser));
+                enableDispenserButtons(true);
+            }
+        }).start();
     }
 }
