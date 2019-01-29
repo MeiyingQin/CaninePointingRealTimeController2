@@ -12,6 +12,7 @@
         android:layout_height="15mm"
         android:text="@string/dispenser_rotate"
         android:gravity="center"
+        android:enabled="false"
         android:onClick="onDispenserRotateButtonClicked"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +24,7 @@
         android:layout_height="15mm"
         android:text="@string/refresh_dispenser"
         android:gravity="center"
+        android:enabled="false"
         android:onClick="onRefreshDispenserButtonClicked"
         app:layout_constraintTop_toBottomOf="@id/dispenserRotateButton" />
 
@@ -73,7 +75,7 @@
         android:layout_height="wrap_content"
         android:onClick="onWalkCheckboxClicked"
         android:checked="false"
-        android:enabled="false"
+        android:enabled="true"
         android:text="@string/walkcontroller_enabled"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         app:layout_constraintLeft_toLeftOf="parent"
